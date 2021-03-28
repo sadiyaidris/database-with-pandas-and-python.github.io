@@ -17,41 +17,6 @@
         "documentation": {}
     },
     {
-        "label": "Error",
-        "importPath": "psycopg2",
-        "description": "psycopg2",
-        "isExtraImport": true,
-        "detail": "psycopg2",
-        "documentation": {}
-    },
-    {
-        "label": "getConnection",
-        "kind": 2,
-        "importPath": "postgre_answer",
-        "description": "postgre_answer",
-        "peekOfCode": "def getConnection():\n    connection = psycopg2.connect(\n        host='localhost', user='postgres', password='password', database='postgres')\n    return connection\ndef closeConnection(connection):\n    connection.close()\n    print(\"Connection is Closed\")\ndef getCustomer(customer_id):\n    try:\n        connection = getConnection()",
-        "detail": "postgre_answer",
-        "documentation": {}
-    },
-    {
-        "label": "closeConnection",
-        "kind": 2,
-        "importPath": "postgre_answer",
-        "description": "postgre_answer",
-        "peekOfCode": "def closeConnection(connection):\n    connection.close()\n    print(\"Connection is Closed\")\ndef getCustomer(customer_id):\n    try:\n        connection = getConnection()\n        cursor = connection.cursor()\n        query = \"SELECT * FROM CUSTOMER WHERE customer_id = %s\"\n        cursor.execute(query, (customer_id,))\n        records = cursor.fetchall()",
-        "detail": "postgre_answer",
-        "documentation": {}
-    },
-    {
-        "label": "getCustomer",
-        "kind": 2,
-        "importPath": "postgre_answer",
-        "description": "postgre_answer",
-        "peekOfCode": "def getCustomer(customer_id):\n    try:\n        connection = getConnection()\n        cursor = connection.cursor()\n        query = \"SELECT * FROM CUSTOMER WHERE customer_id = %s\"\n        cursor.execute(query, (customer_id,))\n        records = cursor.fetchall()\n        print(\"Printing Records\")\n        for row in records:\n            print(\"Customer ID\", row[0])",
-        "detail": "postgre_answer",
-        "documentation": {}
-    },
-    {
         "label": "getConnection",
         "kind": 2,
         "importPath": "starter_code_part2",
